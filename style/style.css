@@ -60,7 +60,7 @@ section {
     flex-flow:row nowrap;
     justify-items: stretch;
     justify-content: space-around;
-    padding:4em 0em;
+    padding:2em 0em;
     margin:auto;
     z-index: 1;
     gap: 0.5%;
