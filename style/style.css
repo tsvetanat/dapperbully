@@ -125,7 +125,7 @@ section {
     justify-items: stretch;
     justify-content: space-around;
     padding:0em;
-    margin:1em 0em;
+    margin: 0em;
     z-index: 1;
     gap: 0.5%;
     max-width: fit-content;
@@ -1558,7 +1558,7 @@ section {
 @media screen and (min-width:1620px){
 
     section:not(:nth-child(2)) {
-        max-height: 110vh;
+        height: 105vh;
     }
 
     .client_block,
@@ -1569,8 +1569,8 @@ section {
         margin-right:auto;
     }
 
-
     .client_block {
+        padding-top: 1%;
         width: 100%;
         max-width: none;
     }
