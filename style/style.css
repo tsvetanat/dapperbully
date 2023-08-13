@@ -8,51 +8,115 @@ html {
     margin: 0;
 }
 
+
+:root{
+    --white: #f9f9f9;
+    --black: #0e0e10;
+    --gray: #85888C;
+}
+
 body {
     margin:0;
+    padding:0;
 }
 
 section {
     font-size: 1em;
     box-sizing: content-box;
+    padding: 0;
+    margin: 0;
 }
 
 .sticky{
     position: sticky;
     top:0;
-    background: black;
-    overflow:auto;
+    background: var(--black);
+    overflow: hidden;
     font-style: italic;
-    display: inline-flex;
-    justify-content: space-between;
     width: 100%;
-    height: 7em;
     z-index: 2;
 }
 
-.sticky ul{
-    margin: auto 0;
-    display: inline-flex;
-    align-self:center;
-    justify-content: space-between;
-    flex-wrap: wrap;   
-}
-
-.sticky li{
-    list-style: none;
-    font-size: 2.25em;
-    padding: 1.5rem;
-    cursor: pointer;
-}
-
-.sticky li a {
-    text-decoration: none;
-    color: #FFFCFC;
-}
-
 .sticky img {
+    display: inline-block;
+    background: var(--white);
+}
+
+.sticky .nav {
     display: block;
-    background: white;
+    width: 100%;
+    max-height: 0vh;
+    /*position: fixed;*/
+    background-color: var(--black);
+    overflow: hidden;
+    transition: max-height .5s ease-out;
+}
+
+.sticky .menu a{
+    display: block;
+    padding: 1.5em;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    list-style: none;
+} 
+
+.sticky .menu a:hover{
+    background-color: var(--gray);
+}
+
+.sticky .hamburger{
+    cursor: pointer;
+    float: right;
+    padding:  2rem;
+
+}
+
+.sticky .hamburger-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+} 
+
+.sticky .hamburger-line::before,
+.sticky .hamburger-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.sticky .hamburger-line::before{
+    top: 5px;
+}
+.sticky .hamburger-line::after{
+    top: -5px;
+}
+
+.sticky .side-menu {
+    display: none;
+} 
+
+.sticky .side-menu:checked ~ .nav { 
+    max-height: 100vh;
+}
+
+.sticky .side-menu:checked ~ .hamburger .hamburger-line {
+    background: transparent;
+}
+
+.sticky .side-menu:checked ~ .hamburger .hamburger-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.sticky .side-menu:checked ~ .hamburger .hamburger-line::after {
+    transform: rotate(45deg);
+    top:0;
 }
 
 .client_block {
@@ -88,18 +152,21 @@ section {
     opacity:0;
 }
 
-#gallery:hover .man1, #gallery:hover .guy {
+#gallery:hover .man1,
+#gallery:hover .guy {
     transform: translateX(0vw);
     opacity:1; 
 }
 
-.client_block .man2, .man2_smiles {
+.client_block .man2, 
+.client_block .man2_smiles {
     transform: translateX(2vw);
     transition: all 1s linear;
     opacity:0;
 }
 
-#gallery:hover .man2, #gallery:hover .man2_smiles {
+#gallery:hover .man2,
+#gallery:hover .man2_smiles {
     transform: translateX(0vw);
     opacity:1;   
 }
@@ -140,7 +207,7 @@ section {
 }
 
 #services {
-   margin-bottom: 0rem;
+   margin-bottom: 0;
 }
 
 .service_block {
@@ -151,16 +218,14 @@ section {
     align-content:center;
     box-sizing: border-box;
     gap: 6em;
-    margin-bottom: 0rem;
+    margin-bottom: -0.5rem;
 }
 
 .service_block .scissors {
     max-width: 100%;
-    margin-top: 0rem;
+    margin-top: 0;
     overflow: hidden;
     margin-left: 4em;
-    
-    
 }
 
 .service_block2 {
@@ -179,7 +244,7 @@ section {
 }
 
 .service_block2 div {
-    margin:1em;
+    margin:0 1em 0 1em;
     padding-left:4em;   
 }
 
@@ -618,15 +683,12 @@ section {
 }
 
 .contact_block {
-    padding:2rem 9rem;
-}
-
-.contact_block {
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     justify-items: center;
+    padding:2rem 9rem;
 }
 
 .contact_block h2 {
@@ -638,7 +700,7 @@ section {
     padding:0;
 }
 
-.message {
+.contact_block .message {
     width:50%;
     box-sizing: border-box;
     
@@ -658,7 +720,8 @@ section {
     font-size: 80%;
 }
 
-.contact_block input[type="text"], input[type="email"] {
+.contact_block .form input[type="text"], 
+.contact_block .form input[type="email"] {
     background: #FFFFFF;
     color: rgba(0, 0, 0, 0.5);
     font-size: 2.25em;
@@ -668,12 +731,12 @@ section {
     border: none;   
 }
 
-.contact_block input[type="text"]:not(#one){
+.contact_block .form  input[type="text"]:not(#one){
     padding:0em 0em 30% 0.3em;
     width:100%;
 }
 
-.contact_block input[type="text"]:not(#three),input[type="email"] {
+.contact_block .form  input[type="text"]:not(#three),input[type="email"] {
    width:calc(100%/2 - 0.5em);
    box-sizing: border-box;
    padding:0.3em;
@@ -708,7 +771,6 @@ section {
 }
 
 .footer ul {
-    font-size: 2rem;
     list-style: none;
     text-align: left;
 }
@@ -736,29 +798,17 @@ section {
 
     #gallery {
         font-size: 1em;
-        height:max-content;
-    }
-
-    .sticky {
-        height: fit-content;
-    }
-
-    .sticky ul {
-        margin:0;
-        width:140%;
-        padding: 0em;
-        justify-content: center;
-    }
-   
-    .sticky li {
-        font-size: 1.3em;
-        padding: 0.4em;
+        height:100%;
     }
 
     .sticky img {
        margin: 0;
        width: 100%;
        max-width: 35vw; 
+    }
+
+    .sticky .menu .nav {
+        margin: 0 auto;
     }
 
     .client_block {
@@ -769,7 +819,11 @@ section {
         align-content: center;
         align-items: center;
         gap:2em;
+        margin: 0%;
+        max-width: fit-content;
         padding: 1em;  
+        overflow: hidden;
+        margin: 0 auto;
     }
 
     .client_block .boy {
@@ -799,7 +853,6 @@ section {
         opacity:1;
         transform: translateX(0vw);     
     }
-    
 
     .client_block .guy {
         opacity:0;
@@ -863,9 +916,10 @@ section {
     .service_block .scissors {
         display: none;
     }
+
     .service_block2 {
         animation: none;
-        margin:3em 0;
+        margin:3em 0 0 0;
         padding:0;
         width:100%;
     }
@@ -1017,11 +1071,10 @@ section {
     @keyframes appear {
      from {
          opacity: 0;
-         } to 
-         { 
+        } to { 
             opacity: 1;
-         }   
-        }
+        }   
+    }
 
     @-moz-keyframes appear {
         from {
@@ -1106,6 +1159,12 @@ section {
         opacity:0;
         order: 3;
         transition: all 2s ease 3s;
+        font-size: 1em;
+    }
+
+    .footer p, 
+    .footer ul, h6 {
+        font-size: 1.5rem;
     }
 
     #contact:hover .footer{
@@ -1113,27 +1172,49 @@ section {
     }
 }
 
+@media screen and (min-width:1200px) {
+
+    .sticky .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+        display: flex;
+    }
+
+    .sticky .nav .menu{
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;   
+    }
+
+    .sticky .nav .menu a{
+        margin: auto 0;
+    }
+
+    .sticky .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+    }
+
+    .sticky .hamburger{
+        display: none;
+    }
+
+
+}
+
 @media screen and (min-width:768px) and (max-width: 1620px){
+   
     
-    .client_block,.service_block,.staff_block,.contact_block {
+    .client_block,
+    .service_block,
+    .staff_block,
+    .contact_block {
         margin-left: 0;
         margin-right:0;
-    }
-
-    .sticky li {
-        font-size: 1.5rem;
-        padding:0.7em;
-        
-    }
-
-    .sticky ul {
-      padding: 0;
-      margin: 0;
-      justify-content: center;
-    }
-
-    .sticky {
-        height:fit-content;
     }
 
     #gallery {
@@ -1171,7 +1252,6 @@ section {
 
     .client_block #right {
         order:5;
-
     }
 
     .client_block .break {
@@ -1182,10 +1262,10 @@ section {
     }
   
     .client_block  #left, #right {
-          display:flex;
-          flex-direction: row;
-          gap: 0.5%;
-      }
+        display:flex;
+        flex-direction: row;
+        gap: 0.5%;
+    }
 
     .client_block .boy.one{
         opacity:0;
@@ -1278,21 +1358,18 @@ section {
         box-sizing: content-box;
         height: max-content;
         overflow:hidden;
-        
     }
 
     .service_block .scissors {
-        order:1;
-        margin-left: 0;
+        display: none;
     }
+
     .service_block2 {
-        order:2;
-        margin:-1em auto 6em auto;
+        margin:7em auto ;
     }
 
     #team {
         height: max-content;
-
     }
 
     .staff_block {
@@ -1319,7 +1396,6 @@ section {
         gap: 5%;
         height: max-content;
     }
-
 
     .staff_block .break {
         display: block;
@@ -1399,8 +1475,8 @@ section {
         padding-top: 9.2%;
         padding-bottom: 9.2%;
     }
-
-    .contact_block .contact {
+    
+    .contact_block  {
         display:flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -1409,7 +1485,7 @@ section {
         margin: 0 auto;
     }
 
-    .contact_block  {
+    .contact_block .contact {
         display:flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -1427,16 +1503,17 @@ section {
     .contact_block .form {
         gap: 1.3em;
         margin: 0 auto;
-        height: 30em;
+        height: 40em;
     }  
 
-    .contact_block input[type="text"]:not(#three),input[type="email"] {
+    .contact_block input[type="text"]:not(#three),
+    .contact_block input[type="email"] {
         width:calc(100%/2 - 1em);
         box-sizing: content-box;
         padding:0.3em;  
     }
 
-    .message {
+    .contact_block .message {
         order: 1;
         max-width: 100%;
         min-width: 50%;
@@ -1459,7 +1536,6 @@ section {
         transition: all 2s ease 3s;
     }
 
-
     #contact:hover .map{
         opacity:1;
     }
@@ -1474,16 +1550,21 @@ section {
         opacity:1;
     }
 
-
     #contact:hover .message{
         opacity:1;
     }
 }
 
-
 @media screen and (min-width:1620px){
 
-    .client_block,.service_block,.staff_block,.contact_block {
+    section:not(:nth-child(2)) {
+        height: 100vh;
+    }
+
+    .client_block,
+    .service_block,
+    .staff_block,
+    .contact_block {
         margin-left: auto;
         margin-right:auto;
     }
