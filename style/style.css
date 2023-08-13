@@ -1558,7 +1558,7 @@ section {
 @media screen and (min-width:1620px){
 
     section:not(:nth-child(2)) {
-        height: 100vh;
+        height: 100%;
     }
 
     .client_block,
