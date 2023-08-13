@@ -1568,7 +1568,11 @@ section {
         margin-left: auto;
         margin-right:auto;
     }
-
+    .client_block,
+    .staff_block {
+        padding-bottom:2em;
+    }
+    
     .client_block {
         width: 100%;
         max-width: none;
