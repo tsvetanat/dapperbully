@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rosario:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inika&family=Volkhov&display=swap');
 
 
@@ -21,8 +21,7 @@ body {
 }
 
 section {
-    font-size: 1em;
-    box-sizing: content-box;
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
@@ -46,7 +45,6 @@ section {
     display: block;
     width: 100%;
     max-height: 0vh;
-    /*position: fixed;*/
     background-color: var(--black);
     overflow: hidden;
     transition: max-height .5s ease-out;
@@ -69,7 +67,6 @@ section {
     cursor: pointer;
     float: right;
     padding:  2rem;
-
 }
 
 .sticky .hamburger-line {
@@ -119,59 +116,60 @@ section {
     top:0;
 }
 
-.client_block {
+.client-block {
     display:flex;
     flex-flow:row nowrap;
     justify-items: stretch;
     justify-content: space-around;
-    padding:0em;
-    margin: 0em;
+    padding:0;
+    margin: 0;
     z-index: 1;
-    gap: 0.5%;
+    gap: 0.5vw;
+    width:100%;
     max-width: fit-content;
     overflow: hidden;
 }
 
-.client_block img{
+.client-block img{
     max-width: 100%;
 }
 
-.client_block .boy {
+.client-block .boy {
     margin: auto 0;
 }
 
-.client_block .man1, 
-.client_block .man2_smiles {
-    margin-bottom: 2em;
+.client-block .man-in-hat, 
+.client-block .man-smiles {
+    margin-bottom: 0.5vw;
 }
 
-.client_block .man1, 
-.client_block .guy {
+.client-block .man-in-hat, 
+.client-block .guy {
     transform: translateX(-2vw);
     transition: all 1s linear;
     opacity:0;
 }
 
-#gallery:hover .man1,
+#gallery:hover .man-in-hat,
 #gallery:hover .guy {
     transform: translateX(0vw);
     opacity:1; 
 }
 
-.client_block .man2, 
-.client_block .man2_smiles {
+.client-block .man-beard-cut, 
+.client-block .man-smiles {
     transform: translateX(2vw);
     transition: all 1s linear;
     opacity:0;
 }
 
-#gallery:hover .man2,
-#gallery:hover .man2_smiles {
+#gallery:hover .man-beard-cut,
+#gallery:hover .man-smiles {
     transform: translateX(0vw);
     opacity:1;   
 }
 
-.client_block .boy.one{
+.client-block .boy.one{
     opacity:0;
     transition:all 1s linear;
     transition-delay: 1s;
@@ -183,7 +181,7 @@ section {
     transform: translateX(0vw);
 }
 
-.client_block .boy.two{
+.client-block .boy.two{
     opacity:0;
     transition:all 1s linear;
     transition-delay: 1s;
@@ -195,22 +193,16 @@ section {
     transform: translateX(0vw);   
 }
 
-.client_block .break {
+.client-block .break {
     display:none;
 
-}
-.client_block #right {
-    margin-right:1%
-}
-.client_block #left {
-    margin-left:1%
 }
 
 #services {
    margin-bottom: 0;
 }
 
-.service_block {
+.service-block {
     display:flex;
     flex-direction:row;
     justify-content: space-between;
@@ -218,17 +210,17 @@ section {
     align-content:center;
     box-sizing: border-box;
     gap: 6em;
-    margin-bottom: -0.5rem;
+    margin-bottom: 0;
 }
 
-.service_block .scissors {
+.service-block .scissors {
     max-width: 100%;
     margin-top: 0;
     overflow: hidden;
     margin-left: 4em;
 }
 
-.service_block2 {
+.services {
     display:flex;
     flex-direction:column;
     justify-content: center;
@@ -243,17 +235,17 @@ section {
     -webkit-animation: clockwise 20s linear 4s infinite normal none;   
 }
 
-.service_block2 div {
-    margin:0 1em 0 1em;
+.services div {
+    margin:0;
     padding-left:4em;   
 }
 
-.service_block2 div img {
+.services div img {
     margin:0;
     padding:0;
 }
 
-.service_block2 p {
+.services p {
     font-style: italic;
     font-weight: 700;
     font-size: 3em;
@@ -263,7 +255,7 @@ section {
     margin: 0;   
 }
 
-.service_block .row {
+.service-block .row {
     display:flex;
     flex-direction:row;
     flex-wrap:nowrap;
@@ -298,10 +290,10 @@ section {
     }   
 }   
 
-.service_block2 .styling,
-.service_block2 .trimming,
-.service_block2 .shave,
-.service_block2 .straightening {
+.services .styling,
+.services .trimming,
+.services .shave,
+.services .straightening {
     animation-name: clockwise1, rot;
     -moz-animation-name: clockwise1, rot;
     -webkit-animation-name: clockwise1, rot;
@@ -585,63 +577,62 @@ section {
     font-weight: 700;
     color: #000000;
     text-align: center;
-    margin:3rem 0;
+    margin:1.5rem 0;
     width:100%;
 }
 
-.staff_block {
+.staff-block {
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap:nowrap;
     margin-bottom: 0;
-    gap: 0.5%;
     box-sizing: content-box;
     padding-bottom: 1rem;
+    gap:0.5%;
+    width:100%;
 }
 
-.staff_block:hover .card {
+.staff-block:hover .card {
     opacity: .5;
     z-index: 1;
 }
 
-.staff_block .card:hover {
+.staff-block .card:hover {
     opacity: 1;
 }
 
-.staff_block .card {
+.staff-block .card {
     z-index: 1;
     background-repeat: no-repeat;
     background-size: cover;
     height: 677px;
-    /*max-block-size: 90%;*/  
 }
 
-.staff_block .meredith {
+.staff-block .card.meredith {
     background-image: url('../img/Rectangle 8.png');
     width: 404px;
 }
 
-.staff_block .jason {
-
+.staff-block .card.jason {
     background-image: url('../img/Rectangle 12.png');
-    width: 392px;    
+    width: 392px;  
 }
 
-.staff_block .ryan {
+.staff-block .card.ryan {
     background-image: url('../img/Rectangle 13.png');
-    width: 400px;   
+    width: 400px;
 }
 
-
-.staff_block .james {
+.staff-block .card.james {
     background-image: url('../img/Rectangle 9.png');
-    width: 396px;  
+    width: 396px;
 }
 
-.staff_block .card:hover::after{
+.staff-block .card:hover::after{
     content:'';
     background: rgba(163, 83, 10, 0.7);
+    color: #FFFAFA;
     font-family: 'Volkhov', serif;
     font-weight: 400;
     font-size: 48px;
@@ -650,7 +641,6 @@ section {
     text-align: center;
     max-width: 100%;
     display: inline-block;
-    color: #FFFAFA;
     z-index: 2;
     width: 100%;
     position: relative;
@@ -658,56 +648,57 @@ section {
     border-radius: 0 0 40px 40px;
 }
 
-.staff_block .meredith:hover::after{
+.staff-block .card.meredith:hover::after{
     content:'Meredith';
 }
 
-.staff_block .jason:hover::after{
+.staff-block .card.jason:hover::after{
     content:'Jason';
     padding-top: 9.5%;
     padding-bottom: 9.5%;
 }
 
-.staff_block .ryan:hover::after{
+.staff-block .card.ryan:hover::after{
     content:'Ryan';
 }
 
-.staff_block .james:hover::after{
+.staff-block .card.james:hover::after{
     content:'James';
     padding-top: 9.2%;
     padding-bottom: 9.2%;
 }
 
-.staff_block .break {
+.staff-block .break {
     display:none;
 }
 
-.contact_block {
+.contact-block {
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     justify-items: center;
-    padding:2rem 9rem;
+    padding:1rem 9rem 0 9rem;
 }
 
-.contact_block h2 {
+.contact-block .message h2 {
     font-size: 4rem;
     font-style: italic;
     font-weight: 700;
     text-align: center;
     margin: 0 0 1rem 0;
     padding:0;
+    max-width:700px;
 }
 
-.contact_block .message {
+.contact-block .message {
     width:50%;
     box-sizing: border-box;
-    
 }
 
-.contact_block .form {
+.contact-block .message .form {
     display:flex;
+    gap: 2em;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: #E5E5E5;
@@ -716,12 +707,13 @@ section {
     height: 37em;
     padding: 2em;
     margin-right:2em;
-    gap: 2em;
+    max-width:700px;
+    height:auto;
     font-size: 80%;
 }
 
-.contact_block .form input[type="text"], 
-.contact_block .form input[type="email"] {
+.contact-block .message .form input[type="text"], 
+.contact-block .message .form input[type="email"] {
     background: #FFFFFF;
     color: rgba(0, 0, 0, 0.5);
     font-size: 2.25em;
@@ -731,67 +723,62 @@ section {
     border: none;   
 }
 
-.contact_block .form  input[type="text"]:not(#one){
+.contact-block .message .form  input[type="text"]:not(#one){
     padding:0em 0em 30% 0.3em;
     width:100%;
 }
 
-.contact_block .form  input[type="text"]:not(#three),input[type="email"] {
+.contact-block .message .form  input[type="text"]:not(#three),
+.contact-block .message .form input[type="email"] {
    width:calc(100%/2 - 0.5em);
    box-sizing: border-box;
    padding:0.3em;
 }
 
-.contact_block .map {
+.contact-block .map {
     padding:0;
-    margin-top:3em;
+    margin-top:5em;
 }
 
-.footer {
+.contact-block .footer {
     display:flex;
     flex-flow: row wrap;
     font-style: italic;
     justify-content: space-around;
     align-content: center;
     text-align: center;
-    padding-top: 3em;
     flex-grow: 2;
+    margin: 2rem 0 0 0;
+    padding: 0;
 }
 
-.footer h5 {
-    font-size: 2.25em;
-    margin:0 0 2rem 0;
-    padding:0;
-}
-
-.footer p, .footer ul, h6 {
+.contact-block .footer p, 
+.contact-block .footer ul, 
+.contact-block .footer h5 {
     font-size: 2rem;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
-.footer ul {
+.contact-block .footer ul {
     list-style: none;
-    text-align: left;
+    text-align: center;
 }
 
-.footer ul span {
-    margin: 0.5em;
-}
-
-.footer span, h5, h6 {
+.contact-block .footer span, 
+.contact-block .footer h5 {
     font-style:normal;
     font-weight: 700;
     text-align: center;
 }
 
-.footer a {
+.contact-block .footer a {
     text-decoration: none;
     color:black;
 }
 
-.footer:first-child p {
-    margin:auto 0;
+.contact-block .footer h5 {
+    margin: 0 0 2rem  0;
 }
 
 @media screen and (min-width:0px) and (max-width: 768px) {
@@ -803,7 +790,7 @@ section {
 
     .sticky img {
        margin: 0;
-       width: 100%;
+       width:100%;
        max-width: 35vw; 
     }
 
@@ -811,7 +798,7 @@ section {
         margin: 0 auto;
     }
 
-    .client_block {
+    .client-block {
         display:flex;
         flex-flow:column wrap;
         justify-items: center;
@@ -819,18 +806,17 @@ section {
         align-content: center;
         align-items: center;
         gap:2em;
-        margin: 0;
-        max-width: fit-content;
-        padding: 0;  
+        max-width: fit-content; 
         overflow: hidden;
         margin: 0 auto;
+        padding: 10vw; 
     }
 
-    .client_block .boy {
+    .client-block .boy {
         margin: 0;
     }
 
-    .client_block .boy.one{
+    .client-block .boy.one{
         opacity:0;
         transition:all 1s linear;
         transition-delay: 0s;
@@ -842,19 +828,19 @@ section {
         transform: translateX(0vw);
     }
 
-    .client_block .man1 {
+    .client-block .man-in-hat {
         opacity:0;
         transition:all 1s linear;
         transition-delay: 0.8s;
         transform: translateX(5vw);   
     }
 
-    #gallery:hover .man1 {
+    #gallery:hover .man-in-hat {
         opacity:1;
         transform: translateX(0vw);     
     }
 
-    .client_block .guy {
+    .client-block .guy {
         opacity:0;
         transition:all 1s linear;
         transition-delay: 1.6s;
@@ -865,31 +851,31 @@ section {
         opacity:1;
         transform: translateX(0vw);  
     }
-    .client_block .man2_smiles {
+    .client-block .man-smiles {
         opacity:0;
         transition:all 1s linear;
         transition-delay: 2.4s;
         transform: translateX(5vw);
     }
 
-    #gallery:hover .man2_smiles {
+    #gallery:hover .man-smiles {
         opacity:1;
         transform: translateX(0vw);    
     }
     
-    .client_block .man2 {
+    .client-block .man-beard-cut {
         opacity:0;
         transition:all 1s linear;
         transition-delay: 3.2s;
         transform: translateX(-5vw);    
     }
 
-    #gallery:hover .man2 {
+    #gallery:hover .man-beard-cut {
         opacity:1;
         transform: translateX(0vw);     
     }
 
-    .client_block .boy.two{
+    .client-block .boy.two{
         opacity:0;
         transition:all 1s linear;
         transition-delay: 4s;
@@ -907,24 +893,24 @@ section {
         padding:0;
     }
 
-    .service_block {
+    .service-block {
         margin: 0;
         padding:0;
         display:block;
     }
 
-    .service_block .scissors {
+    .service-block .scissors {
         display: none;
     }
 
-    .service_block2 {
+    .services {
         animation: none;
         margin:3em 0 0 0;
         padding:0;
         width:100%;
     }
 
-    .service_block2 .row {
+    .services .row {
         padding:0;
         flex-direction:column;
         flex-wrap:wrap;
@@ -932,44 +918,49 @@ section {
         justify-items: center;
     }
     
-    .service_block2 div {
+    .services div {
         margin:0 auto;
-        padding-left:0;   
+        padding-left:0;
+    }
+    .services p {
+        font-size: 2.5rem;
     }
 
-    #services:hover .service_block2 .styling {
+    .services  img{
+        max-width: 300px;
+        width: 100%;
+        height: auto; 
+    }
+
+    #services:hover .services .styling {
         -moz-animation: 2s ease 0s normal forwards 1 anim;;
         -webkit-animation: 2s ease 0s normal forwards 1 anim;
         animation: 2s ease 0s normal forwards 1 anim;
-       
     }
 
-    #services:hover .service_block2 .trimming {
+    #services:hover .services .trimming {
         -moz-animation: 2s ease 2s normal forwards 1 anim;;
         -webkit-animation: 2s ease 2s normal forwards 1 anim;
         animation: 2s ease 2s normal forwards 1 anim;
-       
     }
 
-
-    #services:hover .service_block2 .shave {
+    #services:hover .services .shave {
         -moz-animation: 2s ease 4s normal forwards 1 anim;;
         -webkit-animation: 2s ease 4s normal forwards 1 anim;
         animation: 2s ease 4s normal forwards 1 anim;
     }
 
   
-    #services:hover .service_block2 .straightening {
+    #services:hover .services .straightening {
         -moz-animation: 2s ease 6s normal forwards 1 anim;;
         -webkit-animation: 2s ease 6s normal forwards 1 anim;
         animation: 2s ease 6s normal forwards 1 anim;
     }
 
-
-    .service_block2 .styling,
-    .service_block2 .trimming,
-    .service_block2 .shave,
-    .service_block2 .straightening {
+    .services .styling,
+    .services .trimming,
+    .services .shave,
+    .services .straightening {
         animation:none;
         margin: 3em 0;
     }
@@ -1018,54 +1009,44 @@ section {
             opacity:1;
         }
     }
-
-
-    #team { 
-        height:max-content;
-    }
-        
+   
     #team h1{
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
-
-    .staff_block {
+    .staff-block {
         display:flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         gap: 4rem;
-        margin-bottom: 0;
+        margin: 0;
+        overflow: hidden;
     }
-    
-    .staff_block.card {
-        padding-bottom:3rem;
-    }
-    
-    .staff_block .card:hover::after {
-        content:none;
-    }
-    
-    .staff_block .card:hover::after {
-        content:'';
-        background: rgba(163, 83, 10, 0.7);
-        font-family: 'Volkhov', serif;
-        font-weight: 400;
-        font-size: 48px;
-        padding-top: 9%;
-        padding-bottom: 9%;
-        text-align: center;
-        max-width: 100%;
-        display: inline-block;
-        color: #FFFAFA;
-        z-index: 2;
+
+    .card.meredith,
+    .card.james,
+    .card.jason,
+    .card.ryan {
         width: 100%;
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center; 
         position: relative;
-        top:80%;
-        border-radius: 0 0 40px 40px;
-        -moz-animation: appear 2s ease-out 0s infinite normal none;
-        -webkit-animation: appear 2s ease-out 0s infinite normal none;
-        animation: appear 2s ease-out 0s infinite normal none;
+        z-index: 1;
+    }
+    
+    .staff-block .card:hover::after {
+    margin: 0 3.3rem;
+    font-size: 2rem;
+    padding-top: 7.5%;
+    padding-bottom: 7%;
+    width: 73.7%;
+    border-radius: 0 0 30px 30px;
+        -moz-animation: appear 1s ease-out 0s 1 normal none;
+        -webkit-animation: appear 1s ease-out 0s 1 normal none;
+        animation: appear 1s ease-out 0s 1 normal none;
     }
 
     @keyframes appear {
@@ -1085,27 +1066,17 @@ section {
         }   
     }
        
-    .staff_block .meredith:hover::after{
-        content:'Meredith';    
+    .staff-block .card.jason:hover::after{
+        padding-top: 7.5%;
+        padding-bottom: 7.5%;
     }
     
-    .staff_block .jason:hover::after{
-        content:'Jason';
-        padding-top: 9.5%;
-        padding-bottom: 9.5%;
-    }
-    
-    .staff_block .ryan:hover::after{
-        content:'Ryan';
-    }
-    
-    .staff_block .james:hover::after{
-        content:'James';
-        padding-top: 9.2%;
-        padding-bottom: 9.2%;
+    .staff-block .card.james:hover::after{
+        padding-top: 7.2%;
+        padding-bottom: 7.2%;
     }
 
-    .contact_block {
+    .contact-block {
         display:flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -1115,56 +1086,73 @@ section {
         padding:0;    
     }
 
-    .contact_block .message {
+    .contact-block .message {
         order: 2;
-        width:100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:fit-content;
         opacity: 0;
-        transition: all 2s ease 2s;
-        font-size: 1rem;
-        margin: 0;
+        transition: all 1s ease 1s;
+        padding:0 1rem;
     }
 
-    .contact_block .form {
-        width:100%;
-        margin: 0 auto;
+    .contact-block .message h2{
+        font-size: 3rem;
     }
-   
+    .contact-block .message .form {
+        max-width: 500px;
+        margin:0;
+    }
+
     #contact:hover .message{
         opacity:1;
     }
 
-    .contact_block .map {
+    .contact-block .map {
+        margin-top: 1rem;
         opacity:0;
         order: 1;
-        transition: all 2s ease 1s;
-    }
-
-    iframe {
-        max-width: 100%;
+        transition: all 1s ease 1s;
     }
 
     #contact:hover .map{
         opacity:1;
     }
 
-    .contact_block input[type="text"],input[type="email"] {
-        font-size: 1.5em;
-    }
-    .contact_block .form {
-        gap: 1.3em;
-        height:30em;
+    .contact-block .form input[type="text"], 
+    .contact-block .form input[type="email"] {
+        font-size: 1.2rem;
     }
 
-    .footer {
+    .contact-block .form  input[type="text"]:not(#one){
+        padding:0em 0em 30% 0.3em;
+        width:100%;
+    }
+    
+    .contact-block .form  input[type="text"]:not(#three),input[type="email"] {
+       width:calc(100%/2 - 1em);
+       box-sizing: border-box;
+       padding:0.3em;
+    }
+
+    iframe {
+        max-width: 100%;
+        height: 400px;
+    }
+
+    .contact-block .footer {
         opacity:0;
         order: 3;
-        transition: all 2s ease 3s;
-        font-size: 1em;
+        transition: all 2s ease 2s;
+        font-size: 1.5rem;
+        gap: 1rem;
     }
 
-    .footer p, 
-    .footer ul, h6 {
-        font-size: 1.5rem;
+    .contact-block .footer p, 
+    .contact-block .footer ul,  
+    .contact-block .footer h5 {
+        font-size: 1.5rem;    
     }
 
     #contact:hover .footer{
@@ -1202,17 +1190,14 @@ section {
     .sticky .hamburger{
         display: none;
     }
-
-
 }
 
-@media screen and (min-width:768px) and (max-width: 1620px){
+@media screen and (min-width:769px) and (max-width: 1620px){
    
-    
-    .client_block,
-    .service_block,
-    .staff_block,
-    .contact_block {
+    .client-block,
+    .service-block,
+    .staff-block,
+    .contact-block {
         margin-left: 0;
         margin-right:0;
     }
@@ -1221,7 +1206,7 @@ section {
         height: max-content;
     }
 
-    .client_block {
+    .client-block {
         display:flex;
         flex-flow:row wrap;
         justify-items:center;
@@ -1230,49 +1215,48 @@ section {
         margin-top:-1rem;
         z-index: 1;
         height:max-content;
-        gap: 0.5%;
+        gap: 1vw;
         margin: 0 auto; 
     }
 
-   .client_block img {
+   .client-block img {
     max-width:100%;
    }
 
-    .client_block .boy.two {
+    .client-block .boy.two {
         order:2;
     }
 
-    .client_block .boy.one {
+    .client-block .boy.one {
         order:1; 
     }
 
-    .client_block #left {
+    .client-block #left {
         order:4;
     }
 
-    .client_block #right {
+    .client-block #right {
         order:5;
     }
 
-    .client_block .break {
+    .client-block .break {
         display: block;
         height:0;
         width: 100%;
         order:3;
     }
   
-    .client_block  #left, #right {
+    .client-block  #left, #right {
         display:flex;
         flex-direction: row;
-        gap: 0.5%;
+        gap: 1vw;
     }
 
-    .client_block .boy.one{
+    .client-block .boy.one{
         opacity:0;
         transition:all 1s linear;
         transition-delay: 0s;
         transform: translateX(-5vw);
-        padding-bottom: 2em; 
     }
 
     #gallery:hover .boy.one {
@@ -1280,12 +1264,11 @@ section {
         transform: translateX(0vw);
     }
 
-    .client_block .boy.two{
+    .client-block .boy.two{
         opacity:0;
         transition:all 1s linear;
         transition-delay: 0s;
         transform: translateX(-5vw);
-        padding-bottom: 2em;
     }
     
     #gallery:hover .boy.two {
@@ -1293,20 +1276,20 @@ section {
         transform: translateX(0vw);
     }
     
-    .client_block .man1 {
+    .client-block .man-in-hat {
         opacity:0;
         transition:all 1s linear;
         transition-delay: 0.8s;
         transform: translateX(5vw); 
     }
 
-    #gallery:hover .man1 {
+    #gallery:hover .man-in-hat {
         opacity:1;
         transform: translateX(0vw);     
     }
     
-
-    .client_block .guy {
+    .client-block .guy {
+        margin:auto 0;
         opacity:0;
         transition:all 1s linear;
         transition-delay: 0.8s;
@@ -1318,26 +1301,27 @@ section {
         transform: translateX(0vw);
     }
 
-    .client_block .man2_smiles {
+    .client-block .man-smiles {
         opacity:0;
         transition:all 1s linear;
         transition-delay: 1.6s;
         transform: translateX(-5vw); 
     }
 
-    #gallery:hover .man2_smiles {
+    #gallery:hover .man-smiles {
         opacity:1;
         transform: translateX(0vw);   
     }
     
-    .client_block .man2 {
+    .client-block .man-beard-cut {
+        margin: auto 0;
         opacity:0;
         transition:all 1s linear;
         transition-delay: 1.6s;
         transform: translateX(-5vw);    
     }
 
-    #gallery:hover .man2 {
+    #gallery:hover .man-beard-cut {
         opacity:1;
         transform: translateX(0vw);     
     }
@@ -1350,7 +1334,7 @@ section {
         height: max-content;
     }
 
-    .service_block {
+    .service-block {
         display:flex;
         flex-direction:column;
         align-items: center;
@@ -1360,11 +1344,11 @@ section {
         overflow:hidden;
     }
 
-    .service_block .scissors {
+    .service-block .scissors {
         display: none;
     }
 
-    .service_block2 {
+    .services {
         margin:7em auto ;
     }
 
@@ -1372,165 +1356,52 @@ section {
         height: max-content;
     }
 
-    .staff_block {
-        display:flex;
-        flex-direction: row;
-        justify-content: center;
-        justify-items:center;
-        align-items: center;
-        align-content: center;
+    .staff-block {
         flex-wrap:wrap;
-        margin-bottom: 0rem;
-        gap: 0.5%;
-        box-sizing: content-box;
+        margin-bottom: 0;
+        gap: 5%;
+        height: max-content;
         padding-bottom: 1.5rem;
     }
 
-    .staff_block .card:hover::after {
-        content:none;
+    .staff-block .card{
+        margin-bottom:4rem;  
     }
 
-    .staff_block {
-        justify-content: center;
-        justify-items: center;
-        gap: 5%;
-        height: max-content;
-    }
-
-    .staff_block .break {
+    .staff-block .break {
         display: block;
         height:0;
         width: 100%;
     }
-
-    .staff_block .card  {
-        margin-bottom:4rem;     
-    }
-
-    .staff_block .card:active::after {
-        content:'';
-        background: rgba(163, 83, 10, 0.7);
-        font-family: 'Volkhov', serif;
-        font-weight: 400;
-        font-size: 48px;
-        padding-top: 9%;
-        padding-bottom: 9%;
-        text-align: center;
-        max-width: 100%;
-        display: inline-block;
-        color: #FFFAFA;
-        z-index: 2;
-        width: 100%;
-        position: relative;
-        top:80%;
-        border-radius: 0 0 40px 40px;
-        animation: appear 4s ease-out 0s infinite normal none;
-        -moz-animation: appear 4s ease-out 0s infinite normal none;
-        -webkit-animation: appear 4s ease-out 0s infinite normal none;
-    }
-
-    @keyframes appear {
-     from {
-         opacity: 0;
-         } to 
-         { 
-            opacity: 1;
-         }   
-    }
-
-    @-moz-keyframes appear {
-        from {
-            opacity: 0;
-        } to 
-        { 
-            opacity: 1;
-        }   
-    }
-
-    @-webkit-keyframes appear {
-        from {
-            opacity: 0;
-        } to 
-        { 
-            opacity: 1;
-        }   
-    }
     
-    .staff_block .meredith:hover::after{
-        content:'Meredith';    
-    }
-    
-    .staff_block .jason:hover::after{
-        content:'Jason';
-        padding-top: 9.5%;
-        padding-bottom: 9.5%;
-    }
-    
-    .staff_block .ryan:hover::after{
-        content:'Ryan';
-    }
-    
-    .staff_block .james:hover::after{
-        content:'James';
-        padding-top: 9.2%;
-        padding-bottom: 9.2%;
-    }
-    
-    .contact_block  {
+    .contact-block  {
         display:flex;
         flex-direction: column;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: center;
-        gap:2rem;
-        margin: 0 auto;
+        gap:1rem;
+        margin: 2rem auto;
+        padding:0 2rem;
     }
 
-    .contact_block .contact {
-        display:flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap:2rem;
-        margin: 0 auto;
-    }
-
-    .contact_block .message {
-        width:120%;
-        max-width:100%;
-        font-size: 80%;
-    }
-
-    .contact_block .form {
-        gap: 1.3em;
-        margin: 0 auto;
-        height: 40em;
-    }  
-
-    .contact_block input[type="text"]:not(#three),
-    .contact_block input[type="email"] {
-        width:calc(100%/2 - 1em);
-        box-sizing: content-box;
-        padding:0.3em;  
-    }
-
-    .contact_block .message {
+    .contact-block .message {
         order: 1;
-        max-width: 100%;
-        min-width: 50%;
         opacity: 0;
+        width:fit-content;
+        text-align: center;
         transition: all 2s ease 1s;
         align-self: center;  
     }
 
-    .contact_block input[type="text"]:not(#one){
-        padding-bottom:17%;
-    }
+    .contact-block .form {
+        margin: 0 auto;
+    } 
 
-    #contact:hover .contact1{
+    #contact:hover .message{
         opacity:1;
     }
 
-    .contact_block .map {
+    .contact-block .map {
         opacity:0;
         order: 3;
         transition: all 2s ease 3s;
@@ -1540,7 +1411,7 @@ section {
         opacity:1;
     }
 
-    .contact_block .footer {
+    .contact-block .footer {
         opacity:0;
         order: 2;
         transition: all 2s ease 2s;
@@ -1549,30 +1420,32 @@ section {
     #contact:hover .footer{
         opacity:1;
     }
-
-    #contact:hover .message{
-        opacity:1;
+    .contact-block .footer p, .footer ul {
+        font-size: 2rem;
+        margin:1rem;
+        padding:0;
     }
+
 }
 
-@media screen and (min-width:1620px){
+@media screen and (min-width:1621px){
 
     section:not(:nth-child(2)) {
-        height: 105vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: flex-start;
     }
 
-    .client_block,
-    .service_block,
-    .client_block,
-    .service_block{
-        margin-left: auto;
-        margin-right:auto;
+    .client-block,
+    .staff-block,
+    .contact-block{
+        margin: auto;
     }
 
-    .client_block {
-        padding-top: 1%;
-        width: 100%;
-        max-width: none;
+    .client-block {
+        max-width: 1700px;
     }
 
 }
