@@ -126,8 +126,7 @@ section {
     z-index: 1;
     gap: 0.5vw;
     width:100%;
-    max-width: fit-content;
-    overflow: hidden;
+    max-width: fit-content;;
 }
 
 .client-block img{
