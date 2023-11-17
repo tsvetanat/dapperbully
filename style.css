@@ -931,38 +931,44 @@ section {
         height: auto; 
     }
 
-    #services:hover .services .styling {
+    #services:hover .services .row .styling {
         -moz-animation: 2s ease 0s normal forwards 1 anim;;
         -webkit-animation: 2s ease 0s normal forwards 1 anim;
         animation: 2s ease 0s normal forwards 1 anim;
     }
 
-    #services:hover .services .trimming {
+    #services:hover .services .row .trimming {
         -moz-animation: 2s ease 2s normal forwards 1 anim;;
         -webkit-animation: 2s ease 2s normal forwards 1 anim;
         animation: 2s ease 2s normal forwards 1 anim;
     }
 
-    #services:hover .services .shave {
+    #services:hover .services .row .shave {
         -moz-animation: 2s ease 4s normal forwards 1 anim;;
         -webkit-animation: 2s ease 4s normal forwards 1 anim;
         animation: 2s ease 4s normal forwards 1 anim;
     }
 
   
-    #services:hover .services .straightening {
+    #services:hover .services .row .straightening {
         -moz-animation: 2s ease 6s normal forwards 1 anim;;
         -webkit-animation: 2s ease 6s normal forwards 1 anim;
         animation: 2s ease 6s normal forwards 1 anim;
     }
 
-    .services .styling,
-    .services .trimming,
-    .services .shave,
-    .services .straightening {
-        animation:none;
+    .services .row .styling,
+    .services .row .trimming,
+    .services .row .shave,
+    .services .row .straightening {
+       animation:none;
         margin: 3em 0;
     }
+    .services .row div:hover>img{
+        -moz-animation: 2s ease 0s normal forwards 1 anim;;
+        -webkit-animation: 2s ease 0s normal forwards 1 anim;
+        animation: 2s ease 0s normal forwards 1 anim;
+    }
+
 
     @keyframes anim {
         from {
